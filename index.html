@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UKK Command Centre — Politeknik Balik Pulau</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <div class="header-logo">
+          <span class="logo-icon">🏛️</span>
+        </div>
+        <div class="header-title">
+          <span class="header-main">UKK Command Centre</span>
+          <span class="header-sub">Politeknik Balik Pulau — Unit Komunikasi &amp; Hubungan Korporat</span>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span id="header-bulan" class="header-bulan"></span>
+        <span id="header-tarikh" class="header-tarikh"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAV TABS ===== -->
+  <nav class="nav-tabs" id="nav-tabs">
+    <div class="nav-inner">
+      <button class="nav-tab active" data-tab="utama">
+        <span class="tab-icon">🏠</span>
+        <span class="tab-label">Utama</span>
+      </button>
+      <button class="nav-tab" data-tab="hebahan">
+        <span class="tab-icon">📱</span>
+        <span class="tab-label">Hebahan</span>
+      </button>
+      <button class="nav-tab" data-tab="jadual">
+        <span class="tab-icon">📅</span>
+        <span class="tab-label">Jadual</span>
+      </button>
+      <button class="nav-tab" data-tab="permohonan">
+        <span class="tab-icon">📋</span>
+        <span class="tab-label">Permohonan</span>
+      </button>
+      <button class="nav-tab" data-tab="program">
+        <span class="tab-icon">🎯</span>
+        <span class="tab-label">Program</span>
+      </button>
+      <button class="nav-tab" data-tab="kejayaan">
+        <span class="tab-icon">🏆</span>
+        <span class="tab-label">Kejayaan</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== KANDUNGAN UTAMA ===== -->
+  <main class="main-content">
+
+    <!-- TAB: UTAMA -->
+    <section class="tab-panel active" id="panel-utama">
+      <div class="panel-header">
+        <h2 class="panel-title">Papan Pemantauan Utama</h2>
+        <span class="panel-subtitle" id="kpi-bulan-label"></span>
+      </div>
+
+      <!-- Kad KPI -->
+      <div class="kpi-grid" id="kpi-grid">
+        <div class="kpi-card" id="kpi-hebahan">
+          <div class="kpi-icon">📣</div>
+          <div class="kpi-info">
+            <span class="kpi-label">KPI Hebahan</span>
+            <span class="kpi-value" id="kpi-hebahan-val">—</span>
+          </div>
+          <div class="kpi-bar-wrap">
+            <div class="kpi-bar" id="kpi-hebahan-bar"></div>
+          </div>
+          <span class="kpi-pct" id="kpi-hebahan-pct">—%</span>
+        </div>
+        <div class="kpi-card" id="kpi-permohonan">
+          <div class="kpi-icon">📋</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Permohonan Selesai</span>
+            <span class="kpi-value" id="kpi-permohonan-val">—</span>
+          </div>
+          <div class="kpi-bar-wrap">
+            <div class="kpi-bar" id="kpi-permohonan-bar"></div>
+          </div>
+          <span class="kpi-pct" id="kpi-permohonan-pct">—%</span>
+        </div>
+        <div class="kpi-card" id="kpi-program">
+          <div class="kpi-icon">🎯</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Program Dilaksana</span>
+            <span class="kpi-value" id="kpi-program-val">—</span>
+          </div>
+          <div class="kpi-bar-wrap">
+            <div class="kpi-bar" id="kpi-program-bar"></div>
+          </div>
+          <span class="kpi-pct" id="kpi-program-pct">—%</span>
+        </div>
+        <div class="kpi-card" id="kpi-story">
+          <div class="kpi-icon">🏆</div>
+          <div class="kpi-info">
+            <span class="kpi-label">Kejayaan Diwar-warkan</span>
+            <span class="kpi-value" id="kpi-story-val">—</span>
+          </div>
+          <div class="kpi-bar-wrap">
+            <div class="kpi-bar" id="kpi-story-bar"></div>
+          </div>
+          <span class="kpi-pct" id="kpi-story-pct">—%</span>
+        </div>
+      </div>
+
+      <!-- KPI Platform Hebahan -->
+      <div class="section-card">
+        <h3 class="section-title">📊 Prestasi Hebahan Mengikut Platform</h3>
+        <div id="platform-kpi-list" class="platform-kpi-list"></div>
+      </div>
+
+      <!-- Dua lajur bawah -->
+      <div class="utama-bottom-grid">
+        <div class="section-card">
+          <h3 class="section-title">📅 Program Akan Datang</h3>
+          <ul id="utama-program-list" class="mini-list"></ul>
+        </div>
+        <div class="section-card">
+          <h3 class="section-title">⏳ Permohonan Belum Selesai</h3>
+          <ul id="utama-permohonan-list" class="mini-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: HEBAHAN -->
+    <section class="tab-panel" id="panel-hebahan">
+      <div class="panel-header">
+        <h2 class="panel-title">Rekod Hebahan Media Sosial</h2>
+        <button class="btn btn-primary" id="btn-tambah-hebahan">+ Tambah Hebahan</button>
+      </div>
+      <div class="filter-bar">
+        <select class="filter-select" id="filter-hebahan-platform">
+          <option value="">Semua Platform</option>
+          <option>Facebook</option>
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>X</option>
+          <option>YouTube</option>
+        </select>
+        <select class="filter-select" id="filter-hebahan-bulan">
+          <option value="">Semua Bulan</option>
+        </select>
+        <select class="filter-select" id="filter-hebahan-jenis">
+          <option value="">Semua Jenis</option>
+          <option>Gambar</option>
+          <option>Video</option>
+          <option>Reels</option>
+          <option>Infografik</option>
+          <option>Teks</option>
+        </select>
+      </div>
+      <div id="hebahan-ringkasan" class="platform-ringkasan"></div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-hebahan">
+          <thead>
+            <tr>
+              <th>Tarikh</th>
+              <th>Platform</th>
+              <th>Tajuk Kandungan</th>
+              <th>Jenis</th>
+              <th>Reach</th>
+              <th>Program Berkaitan</th>
+              <th>Staf</th>
+              <th>Tindakan</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-hebahan"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB: JADUAL KANDUNGAN -->
+    <section class="tab-panel" id="panel-jadual">
+      <div class="panel-header">
+        <h2 class="panel-title">Jadual Penerbitan Kandungan</h2>
+        <button class="btn btn-primary" id="btn-tambah-jadual">+ Rancang Kandungan</button>
+      </div>
+      <div class="jadual-controls">
+        <div class="toggle-view">
+          <button class="toggle-btn active" id="btn-view-kalendar" data-view="kalendar">📅 Kalendar</button>
+          <button class="toggle-btn" id="btn-view-senarai" data-view="senarai">☰ Senarai</button>
+        </div>
+      </div>
+
+      <!-- Paparan Kalendar -->
+      <div id="view-kalendar" class="kalendar-wrap">
+        <div class="kalendar-nav">
+          <button class="btn btn-outline" id="btn-bulan-prev">&#8249; Sebelum</button>
+          <span id="kalendar-bulan-label" class="kalendar-bulan-label"></span>
+          <button class="btn btn-outline" id="btn-bulan-next">Seterusnya &#8250;</button>
+        </div>
+        <div class="kalendar-grid-header">
+          <span>Ahad</span><span>Isnin</span><span>Selasa</span>
+          <span>Rabu</span><span>Khamis</span><span>Jumaat</span><span>Sabtu</span>
+        </div>
+        <div class="kalendar-grid" id="kalendar-grid"></div>
+        <div class="kalendar-legend">
+          <span class="legend-item"><span class="legend-dot dot-draf"></span>Draf</span>
+          <span class="legend-item"><span class="legend-dot dot-semakan"></span>Dalam Semakan</span>
+          <span class="legend-item"><span class="legend-dot dot-terbit"></span>Diterbitkan</span>
+          <span class="legend-item"><span class="legend-cuti"></span>Cuti Umum</span>
+        </div>
+      </div>
+
+      <!-- Paparan Senarai -->
+      <div id="view-senarai" class="hidden">
+        <div class="filter-bar">
+          <select class="filter-select" id="filter-jadual-status">
+            <option value="">Semua Status</option>
+            <option value="Draf">Draf</option>
+            <option value="DalamSemakan">Dalam Semakan</option>
+            <option value="Diterbitkan">Diterbitkan</option>
+          </select>
+          <select class="filter-select" id="filter-jadual-platform">
+            <option value="">Semua Platform</option>
+            <option>Facebook</option>
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>X</option>
+            <option>YouTube</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="table-jadual">
+            <thead>
+              <tr>
+                <th>Tarikh Rancang</th>
+                <th>Tajuk</th>
+                <th>Platform</th>
+                <th>Penanggung Jawab</th>
+                <th>Status</th>
+                <th>Nota</th>
+                <th>Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-jadual"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel detail hari (klik pada kalendar) -->
+      <div id="panel-hari" class="panel-hari hidden">
+        <div class="panel-hari-header">
+          <h4 id="panel-hari-title"></h4>
+          <button class="btn-close" id="btn-tutup-hari">✕</button>
+        </div>
+        <ul id="panel-hari-list" class="mini-list"></ul>
+      </div>
+    </section>
+
+    <!-- TAB: PERMOHONAN -->
+    <section class="tab-panel" id="panel-permohonan">
+      <div class="panel-header">
+        <h2 class="panel-title">Tracker Permohonan Bahan Kreatif</h2>
+        <button class="btn btn-primary" id="btn-tambah-permohonan">+ Permohonan Baru</button>
+      </div>
+      <div class="filter-bar">
+        <select class="filter-select" id="filter-permohonan-jenis">
+          <option value="">Semua Jenis</option>
+          <option>Poster</option>
+          <option>Fotografi</option>
+          <option>Video</option>
+          <option>Liputan</option>
+        </select>
+        <select class="filter-select" id="filter-permohonan-bulan">
+          <option value="">Semua Bulan</option>
+        </select>
+      </div>
+      <div class="kanban-board" id="kanban-board">
+        <div class="kanban-col" data-status="Diterima">
+          <div class="kanban-col-header kanban-header-biru">
+            <span>📥 Diterima</span>
+            <span class="kanban-count" id="count-Diterima">0</span>
+          </div>
+          <div class="kanban-cards" id="kanban-Diterima"></div>
+        </div>
+        <div class="kanban-col" data-status="DalamKerja">
+          <div class="kanban-col-header kanban-header-oren">
+            <span>🔄 Dalam Kerja</span>
+            <span class="kanban-count" id="count-DalamKerja">0</span>
+          </div>
+          <div class="kanban-cards" id="kanban-DalamKerja"></div>
+        </div>
+        <div class="kanban-col" data-status="MenungguSemakan">
+          <div class="kanban-col-header kanban-header-ungu">
+            <span>👁️ Menunggu Semakan</span>
+            <span class="kanban-count" id="count-MenungguSemakan">0</span>
+          </div>
+          <div class="kanban-cards" id="kanban-MenungguSemakan"></div>
+        </div>
+        <div class="kanban-col" data-status="Selesai">
+          <div class="kanban-col-header kanban-header-hijau">
+            <span>✅ Selesai</span>
+            <span class="kanban-count" id="count-Selesai">0</span>
+          </div>
+          <div class="kanban-cards" id="kanban-Selesai"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: PROGRAM -->
+    <section class="tab-panel" id="panel-program">
+      <div class="panel-header">
+        <h2 class="panel-title">Status Program UKK</h2>
+        <button class="btn btn-primary" id="btn-tambah-program">+ Tambah Program</button>
+      </div>
+      <div id="program-ringkasan" class="stats-strip"></div>
+      <div class="filter-bar">
+        <select class="filter-select" id="filter-program-status">
+          <option value="">Semua Status</option>
+          <option value="AkanDatang">Akan Datang</option>
+          <option value="SedangBerjalan">Sedang Berjalan</option>
+          <option value="Selesai">Selesai</option>
+        </select>
+        <select class="filter-select" id="filter-program-peringkat">
+          <option value="">Semua Peringkat</option>
+          <option>Antarabangsa</option>
+          <option>Kebangsaan</option>
+          <option>Komuniti</option>
+          <option>Institusi</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="table-program">
+          <thead>
+            <tr>
+              <th>Nama Program</th>
+              <th>Tarikh</th>
+              <th>Lokasi</th>
+              <th>Peringkat</th>
+              <th>Peserta Sasaran</th>
+              <th>Peserta Sebenar</th>
+              <th>% Hadir</th>
+              <th>Status</th>
+              <th>Tindakan</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-program"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB: KEJAYAAN -->
+    <section class="tab-panel" id="panel-kejayaan">
+      <div class="panel-header">
+        <h2 class="panel-title">Kejayaan &amp; Success Story</h2>
+        <button class="btn btn-primary" id="btn-tambah-kejayaan">+ Tambah Kejayaan</button>
+      </div>
+      <div id="kejayaan-ringkasan" class="peringkat-strip"></div>
+      <div class="filter-bar">
+        <select class="filter-select" id="filter-kejayaan-kategori">
+          <option value="">Semua Kategori</option>
+          <option>Pelajar</option>
+          <option>Pensyarah</option>
+        </select>
+        <select class="filter-select" id="filter-kejayaan-peringkat">
+          <option value="">Semua Peringkat</option>
+          <option>Antarabangsa</option>
+          <option>Kebangsaan</option>
+          <option>Komuniti</option>
+          <option>Institusi</option>
+        </select>
+        <select class="filter-select" id="filter-kejayaan-hebahan">
+          <option value="">Semua Status Hebahan</option>
+          <option value="Ya">Sudah Diwar-warkan</option>
+          <option value="Belum">Belum Diwar-warkan</option>
+        </select>
+      </div>
+      <div class="kejayaan-grid" id="kejayaan-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== MODAL BORANG ===== -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal-box" id="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Borang</h3>
+        <button class="btn-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Diisi secara dinamik oleh JavaScript -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="modal-batal">Batal</button>
+        <button class="btn btn-primary" id="modal-simpan">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFIKASI ===== -->
+  <div class="toast hidden" id="toast">
+    <span id="toast-msg"></span>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <span>UKK Command Centre &copy; <span id="tahun-footer"></span> — Politeknik Balik Pulau</span>
+  </footer>
+
+  <!-- JavaScript — ikut turutan -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/kpi.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

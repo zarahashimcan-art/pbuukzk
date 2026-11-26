@@ -1,0 +1,270 @@
+/* ============================================================
+   UKK COMMAND CENTRE — responsive.css
+   Breakpoints: 768px (tablet/telefon) · 1024px (laptop kecil)
+   ============================================================ */
+
+/* ---- Laptop kecil (< 1200px) ---- */
+@media (max-width: 1200px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Tablet (< 1024px) ---- */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 20px 16px 32px;
+  }
+
+  .platform-kpi-row {
+    grid-template-columns: 100px 1fr 80px 50px;
+    gap: 8px;
+  }
+
+  .utama-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Telefon (< 768px) ---- */
+@media (max-width: 768px) {
+  /* Header */
+  .header-inner {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .header-sub {
+    display: none;
+  }
+
+  .header-main {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .header-bulan {
+    font-size: 0.78rem;
+  }
+
+  .header-tarikh {
+    display: none;
+  }
+
+  /* Nav tabs */
+  .nav-tabs {
+    top: 58px;
+  }
+
+  .nav-inner {
+    padding: 0 8px;
+  }
+
+  .nav-tab {
+    padding: 9px 12px;
+    font-size: 0.78rem;
+    gap: 4px;
+  }
+
+  .tab-label {
+    display: none;
+  }
+
+  .tab-icon {
+    font-size: 1.1rem;
+  }
+
+  /* Main content */
+  .main-content {
+    padding: 16px 12px 28px;
+  }
+
+  /* KPI Cards */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .kpi-card {
+    padding: 14px 14px 10px;
+  }
+
+  .kpi-value {
+    font-size: 1.25rem;
+  }
+
+  /* Platform KPI */
+  .platform-kpi-row {
+    grid-template-columns: 90px 1fr 70px 45px;
+    gap: 6px;
+  }
+
+  .platform-kpi-name {
+    font-size: 0.78rem;
+  }
+
+  /* Section card */
+  .section-card {
+    padding: 14px;
+  }
+
+  /* Panel header */
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    gap: 8px;
+  }
+
+  .filter-select {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  /* Table — scroll mendatar */
+  .table-wrap {
+    border-radius: var(--radius);
+  }
+
+  .data-table thead th,
+  .data-table tbody td {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  /* Kanban board — 1 lajur pada telefon kecil */
+  .kanban-board {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Stats strip */
+  .stats-strip {
+    gap: 8px;
+  }
+
+  .stat-pill {
+    min-width: 90px;
+    padding: 8px 12px;
+  }
+
+  .stat-pill-val {
+    font-size: 1.2rem;
+  }
+
+  /* Peringkat strip */
+  .peringkat-strip {
+    gap: 8px;
+  }
+
+  .peringkat-pill {
+    min-width: 90px;
+    padding: 8px 14px;
+  }
+
+  .peringkat-pill-val {
+    font-size: 1.2rem;
+  }
+
+  /* Kejayaan grid */
+  .kejayaan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Kalendar */
+  .kal-cell {
+    min-height: 52px;
+    padding: 4px;
+  }
+
+  .kal-tarikh {
+    font-size: 0.72rem;
+  }
+
+  .kal-cuti-label {
+    display: none;
+  }
+
+  .kalendar-nav .btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .kalendar-bulan-label {
+    font-size: 0.9rem;
+  }
+
+  .kalendar-grid-header {
+    font-size: 0.68rem;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal-box {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  /* Toast */
+  .toast {
+    width: calc(100% - 32px);
+    text-align: center;
+    white-space: normal;
+    bottom: 16px;
+  }
+
+  /* Form row */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Utama bottom */
+  .utama-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Telefon sangat kecil (< 400px) ---- */
+@media (max-width: 400px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .kpi-bar-wrap {
+    width: 100%;
+    order: 4;
+  }
+
+  .nav-tab {
+    padding: 9px 10px;
+  }
+}
